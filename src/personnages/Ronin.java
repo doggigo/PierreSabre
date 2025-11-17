@@ -16,12 +16,14 @@ public class Ronin extends Humain{
 			gagnerArgent(gain);
 		} else {
 			parler("J'ai perdu contre ce yakuza, mon honneur et ma bourse ont pris un coup.");
+			int monnaie = getMonnaie();
 			adversaire.gagner(monnaie);
-			monnaie = 0;
+			perdreArgent(monnaie);
 		}
 	}
 	
 	public void donner(Commercant beneficiaire) {
+		int monnaie = getMonnaie();
 		int don = monnaie / 10;
 		
 		parler(beneficiaire.getNom() + ", prends ces " + don + " sous");

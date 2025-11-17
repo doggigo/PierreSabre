@@ -3,10 +3,9 @@ package personnages;
 public class Humain {
 	protected String nom;
 	private String boissonFav;
-	protected int monnaie;
+	private int monnaie;
 
 	public Humain(String nom, String boissonFav, int monnaie) {
-		super();
 		this.nom = nom;
 		this.boissonFav = boissonFav;
 		this.monnaie = monnaie;

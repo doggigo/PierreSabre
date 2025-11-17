@@ -16,8 +16,8 @@ public class Yakuza extends Humain {
 
 	public int perdre() {
 		reputation--;
-		int perte = monnaie;
-		monnaie = 0;
+		int perte = getMonnaie();
+		perdreArgent(perte);
 		parler("J'ai perdu mon duel et mes " + perte + " sous, snif... J'ai déshonoré le clan de " + clan);
 		return perte;
 	}
@@ -33,7 +33,7 @@ public class Yakuza extends Humain {
 		parler(victime.getNom() + ", si tu tiens à la vie donne moi ta bourse !");
 		int recolte = victime.seFaireExtorquer();
 		gagnerArgent(recolte);
-		parler("J'ai piqué les " + recolte + " sous de " + victime.getNom() + ", ce qui me fait " + monnaie + " sous dans ma poche. Hi ! Hi !");
+		parler("J'ai piqué les " + recolte + " sous de " + victime.getNom() + ", ce qui me fait " + getMonnaie() + " sous dans ma poche. Hi ! Hi !");
 	}
 	
 }

@@ -10,10 +10,10 @@ public class Commercant extends Humain {
 		// Solution 1 : passer l'attribut monnaie en protected
 		// Solution 2 : Créer un setter pour l'attribut monnaie
 		
-		int res = getMonnaie();
-		monnaie = 0;
+		int perte = getMonnaie();
+		perdreArgent(perte);
 		parler("J'ai tout perdu! Le monde est trop injuste...");
-		return res;
+		return perte;
 	}
 	
 	public void recevoir(int argent) {
