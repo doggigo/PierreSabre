@@ -6,7 +6,21 @@ public class Ronin extends Humain{
 	public Ronin(String nom, String boissonFav, int monnaie) {
 		super(nom, boissonFav, monnaie);
 	}
-
+	
+	public void provoquer(Yakuza adversaire) {
+		parler("Je t'ai retrouvé vermine, tu vas payer pour ce que tu as fait à ce pauver marchand!");
+		int forceRonin = honneur * 2;
+		if(forceRonin >= adversaire.getReputation()) {
+			parler("Je t'ai eu petit yakuza !");
+			int gain = adversaire.perdre();
+			gagnerArgent(gain);
+		} else {
+			parler("J'ai perdu contre ce yakuza, mon honneur et ma bourse ont pris un coup.");
+			adversaire.gagner(monnaie);
+			monnaie = 0;
+		}
+	}
+	
 	public void donner(Commercant beneficiaire) {
 		int don = monnaie / 10;
 		
